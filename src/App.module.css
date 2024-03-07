@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.link {
+  list-style: none;
+  gap: 10px;
+  color: blue;
+}
+.active {
+  color: brown;
+}
