@@ -18,7 +18,17 @@ export const getSearchMovies = async (searchQuery) => {
       Authorization:
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWQ3YmNiMjYxNmVlMDA4ODBlNmFmNDJlYWIxZmI5ZiIsInN1YiI6IjY1ZWRmNWExYzE1YjU1MDE4NmYzMzA3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cds96AwqsiIWlMrJlp9co9FobbivCruvPh9FOGIusbI",
     },
-    params: { query: searchQuery },
+    params: { query: searchQuery, include_adult: "false" },
   });
   return response.data.results;
+};
+
+export const getMoviesById = async (moviId) => {
+  const response = await axios.get(`/movie/${moviId}`, {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWQ3YmNiMjYxNmVlMDA4ODBlNmFmNDJlYWIxZmI5ZiIsInN1YiI6IjY1ZWRmNWExYzE1YjU1MDE4NmYzMzA3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cds96AwqsiIWlMrJlp9co9FobbivCruvPh9FOGIusbI",
+    },
+  });
+  return response.data;
 };
