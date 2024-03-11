@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  gap: 12px;
+  /* flex-direction: column; */
+}
+
+.link {
+  list-style: none;
+  color: blue;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.isActive {
+  color: rgb(7, 249, 7);
+}
