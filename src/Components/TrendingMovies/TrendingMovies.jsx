@@ -10,7 +10,7 @@ export default function TrendigMovies({ movies }) {
           //   imageClick(image.urls.regular, image.alt_description);
           // }}
         >
-          <Link>{movi.title}</Link>
+          <Link to={`/movies/${movi.id}`}>{movi.title}</Link>
         </li>
       ))}
     </ul>

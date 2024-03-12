@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import Navigation from "../Navigation/Navigation.jsx";
 import HomePage from "../../pages/HomePage/HomePage.jsx";
 import MoviesPage from "../../pages/MoviesPage/MoviesPage.jsx";
-import MovieReviews from "../MovieReviews.jsx";
+import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage.jsx";
 import NotFound from "../../pages/NotFoundPage/NotFoundPage.jsx";
+import MovieCast from "../MovieCast/MovieCast.jsx";
+import MovieReviews from "../MovieReviews/MovieReviews.jsx";
 // import PaymensPage from "./pages/PaimentsPage";
 // import NotFound from "./NotFound";
 // import PaymentDitalsPage from "./PaymentDitalsPage";
@@ -15,9 +17,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:moviId" element={<MovieReviews />}>
-          {/* <Route path="subpage-a" element={<div>SubPage A</div>} />
-          <Route path="subpage-b" element={<div>SubPage B</div>} /> */}
+        <Route path="/movies/:moviId" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

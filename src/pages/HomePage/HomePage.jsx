@@ -22,7 +22,6 @@ export default function HomePage() {
     }
     getData();
   }, []);
-  console.log(trandingMovies);
   return (
     <div>
       <h1>Trendig today</h1>
