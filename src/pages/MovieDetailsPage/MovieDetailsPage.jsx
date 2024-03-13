@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import css from "./MovieDetailsPage.module.css";
 import {
   useParams,
@@ -11,6 +11,7 @@ import { getMoviesById } from "../../movi-api";
 
 export default function MovieDetailsPage() {
   const location = useLocation();
+  const backLinkRef = useRef(location.state ?? "/");
   const { moviId } = useParams();
   const [movi, setMovi] = useState(null);
   const [errors, setErrors] = useState(false);
@@ -44,7 +45,7 @@ export default function MovieDetailsPage() {
         <div className={css.moviDetails}>
           <div className={css.firstDiv}>
             {" "}
-            <Link to={location.state}>Go back</Link>
+            <Link to={backLinkRef.current}>Go back</Link>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt={title}
