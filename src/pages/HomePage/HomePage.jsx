@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTranding } from "../../movi-api";
-import TrendigMovies from "../../Components/TrendingMovies/TrendingMovies";
+import TrendigMovies from "../../components/TrendingMovies/TrendingMovies";
 
 export default function HomePage() {
   const [trandingMovies, setTrandingMovies] = useState([]);

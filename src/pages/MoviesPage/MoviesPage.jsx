@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getSearchMovies } from "../../movi-api";
-import MoviFind from "../../Components/MovieFinded/MovieFinded";
-import MoviesFilter from "../../Components/MoviesFilter/MoviesFilter";
+import MoviFind from "../../components/MovieFinded/MovieFinded";
+import MoviesFilter from "../../components/MoviesFilter/MoviesFilter";
 
 export default function MoviesPage() {
   const [findmovi, setFindMovi] = useState([]);
