@@ -9,7 +9,6 @@ export default function MovieCast() {
     async function getData() {
       try {
         const data = await getMovieCast(moviId);
-        console.log(data);
         setMovi(data);
       } catch (error) {
         setErrors(true);
@@ -18,12 +17,13 @@ export default function MovieCast() {
     getData();
   }, [moviId]);
   if (!movi) {
-    return <div>Loading...</div>; // Добавляем заглушку для случая, когда movi еще не загружен
+    return <div>Loading...</div>;
   }
   const { cast } = movi;
 
   return (
     <div>
+      {errors && <b>HTTP ERROR!</b>}
       <ul>
         {" "}
         {cast.map((oneCast) => (
@@ -32,6 +32,7 @@ export default function MovieCast() {
             <img
               src={`https://image.tmdb.org/t/p/w500/${oneCast.profile_path}`}
               alt={oneCast.original_name}
+              width="17%"
             />
             <p>{oneCast.original_name}</p>
             <p>

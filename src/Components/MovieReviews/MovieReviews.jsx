@@ -9,7 +9,6 @@ export default function MovieReviews() {
     async function getData() {
       try {
         const data = await getMovieRewiew(moviId);
-        console.log(data);
         setMovi(data);
       } catch (error) {
         setErrors(true);
@@ -18,11 +17,12 @@ export default function MovieReviews() {
     getData();
   }, [moviId]);
   if (!movi) {
-    return <div>Loading...</div>; // Добавляем заглушку для случая, когда movi еще не загружен
+    return <div>Loading...</div>;
   }
   const { results } = movi;
   return (
     <ul>
+      {errors && <b>HTTP ERROR!</b>}
       {results.map((result) => (
         <li key={result.key}>
           <h3>Author: {result.author}</h3>

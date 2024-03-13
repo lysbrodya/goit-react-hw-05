@@ -6,9 +6,6 @@ import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage.jsx"
 import NotFound from "../../pages/NotFoundPage/NotFoundPage.jsx";
 import MovieCast from "../MovieCast/MovieCast.jsx";
 import MovieReviews from "../MovieReviews/MovieReviews.jsx";
-// import PaymensPage from "./pages/PaimentsPage";
-// import NotFound from "./NotFound";
-// import PaymentDitalsPage from "./PaymentDitalsPage";
 
 export default function App() {
   return (

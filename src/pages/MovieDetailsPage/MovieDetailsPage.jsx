@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
-import { useParams, NavLink, Outlet } from "react-router-dom";
+import css from "./MovieDetailsPage.module.css";
+import {
+  useParams,
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
 import { getMoviesById } from "../../movi-api";
 
 export default function MovieDetailsPage() {
+  const location = useLocation();
   const { moviId } = useParams();
   const [movi, setMovi] = useState(null);
   const [errors, setErrors] = useState(false);
@@ -10,7 +18,6 @@ export default function MovieDetailsPage() {
     async function getData() {
       try {
         const data = await getMoviesById(moviId);
-        console.log(data);
         setMovi(data);
       } catch (error) {
         setErrors(true);
@@ -31,24 +38,31 @@ export default function MovieDetailsPage() {
     title,
   } = movi;
   return (
-    <div>
+    <div className={css.bigDiv}>
       {errors && <b>HTTP ERROR!</b>}
       {movi && (
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-            alt={title}
-          />
-          <h1>
-            {original_title} ({`${release_date}`.substr(0, 4)})
-          </h1>
-          <p>User score: {Number(`${vote_average}`.substr(0, 3)) * 10}%</p>
-          <h2>Overview</h2>
-          <p>{overview}</p>
-          <h2>Genres</h2>
-          {genres.map((genre) => (
-            <p key={genre.id}>{genre.name}</p>
-          ))}
+        <div className={css.moviDetails}>
+          <div className={css.firstDiv}>
+            {" "}
+            <Link to={location.state}>Go back</Link>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              alt={title}
+            />
+          </div>
+          <div className={css.secondDiv}>
+            {" "}
+            <h1>
+              {original_title} ({`${release_date}`.substr(0, 4)})
+            </h1>
+            <p>User score: {Number(`${vote_average}`.substr(0, 3)) * 10}%</p>
+            <h2>Overview</h2>
+            <p>{overview}</p>
+            <h2>Genres</h2>
+            {genres.map((genre) => (
+              <p key={genre.id}>{genre.name}</p>
+            ))}
+          </div>
         </div>
       )}
       <h3>Aditional infomation</h3>

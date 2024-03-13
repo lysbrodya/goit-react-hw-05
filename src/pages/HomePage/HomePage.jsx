@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
 import { getTranding } from "../../movi-api";
 import TrendigMovies from "../../Components/TrendingMovies/TrendingMovies";
 
@@ -31,20 +30,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// const [trandingMovies, setTrandingMovies] = useState([]);
-// useEffect(() => {
-//   async function getData() {
-//     const response = await axios.get(
-//       "https://api.themoviedb.org/3/trending/movie/week",
-//       {
-//         headers: {
-//           Authorization:
-//             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWQ3YmNiMjYxNmVlMDA4ODBlNmFmNDJlYWIxZmI5ZiIsInN1YiI6IjY1ZWRmNWExYzE1YjU1MDE4NmYzMzA3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cds96AwqsiIWlMrJlp9co9FobbivCruvPh9FOGIusbI",
-//         },
-//       }
-//     );
-//     console.log(response);
-//   }
-//   getData();
-// }, []);
