@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTranding } from "../../movi-api";
-import TrendigMovies from "../../components/TrendingMovies/TrendingMovies.jsx";
+import MovieList from "../../components/MovieList/MovieList.jsx";
 
 export default function HomePage() {
   const [trandingMovies, setTrandingMovies] = useState([]);
@@ -26,7 +26,7 @@ export default function HomePage() {
       <h1>Trendig today</h1>
       {isLoading && <b>Loading payments...</b>}
       {errors && <b>HTTP ERROR!</b>}
-      <TrendigMovies movies={trandingMovies} />
+      <MovieList movies={trandingMovies} />
     </div>
   );
 }

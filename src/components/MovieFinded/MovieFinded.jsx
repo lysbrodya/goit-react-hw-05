@@ -7,7 +7,7 @@ export default function MoviFind({ movies }) {
       {movies.map((movi) => (
         <li key={movi.id}>
           <Link to={`/movies/${movi.id}`} state={location}>
-            {movi.original_title}
+            {movi.title}
           </Link>
         </li>
       ))}

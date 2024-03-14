@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getSearchMovies } from "../../movi-api";
-import MoviFind from "../../components/MovieFinded/MovieFinded.jsx";
+import MovieList from "../../components/MovieList/MovieList.jsx";
 import MoviesFilter from "../../components/MoviesFilter/MoviesFilter.jsx";
 
 export default function MoviesPage() {
@@ -32,7 +32,7 @@ export default function MoviesPage() {
 
       {isLoading && <b>Loading payments...</b>}
       {errors && <b>HTTP ERROR!</b>}
-      <MoviFind movies={findmovi} />
+      <MovieList movies={findmovi} />
     </div>
   );
 }
